@@ -1,0 +1,17 @@
+.NavLink-listItem {
+  list-style: none;
+}
+
+.NavLink {
+  color: var(--ttt-color-neutral-content);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--ttt-color-accent-strong);
+  }
+}
+
+.NavLink-active {
+  color: var(--ttt-color-accent-strong);
+  /* border: 2px solid var(--ttt-color-accent-border); */
+}

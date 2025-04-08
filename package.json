@@ -1,0 +1,13 @@
+{
+  "version": "0.0.0-beta.2",
+  "name": "@khelo/tic-tac-toe",
+  "type": "module",
+  "scripts": {
+    "format": "prettier .",
+    "format:fix": "pnpm format --write"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "prettier": "3.3.3"
+  }
+}

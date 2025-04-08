@@ -1,0 +1,48 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open --host",
+    "build": "tsc -b && vite build",
+    "start": "vite preview --host --open",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "pnpm lint --fix",
+    "gen:palette": "unicornix && mv ./.unicornix/theme.js ./.unicornix/theme.ts && mv ./.unicornix/theme.refs.js ./.unicornix/theme.refs.ts"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.7",
+    "@mui/lab": "6.0.0-beta.17",
+    "@mui/material": "^6.1.7",
+    "@tsparticles/react": "^3.0.0",
+    "jotai": "^2.10.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-router": "7.1.0-pre.0",
+    "tsparticles": "^3.7.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/node": "20",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "typescript": "~5.6.3",
+    "typescript-eslint": "^8.11.0",
+    "unicornix": "^0.8.1",
+    "vite": "^5.4.10"
+  }
+}
