@@ -1,13 +1,64 @@
 {
-  "version": "0.0.0-beta.2",
+  "version": "0.1.1",
   "name": "@khelo/tic-tac-toe",
   "type": "module",
+  "bin": "./packages/cli/dist/index.js",
+  "author": {
+    "email": "49yash@gmmail.com",
+    "name": "Yash Shah",
+    "url": "https://github.com/yash49/"
+  },
+  "files": [
+    "packages/cli/dist",
+    "packages/server/dist",
+    "packages/client/dist",
+    "packages/cli/package.json",
+    "packages/server/package.json",
+    "packages/client/package.json"
+  ],
+  "description": "Play Tic Tac Toe with Friends — or AI!",
+  "keywords": [
+    "tic-tac-toe",
+    "game",
+    "multiplayer",
+    "ai",
+    "artificial intelligence",
+    "single player game",
+    "multiplayer game",
+    "lan game",
+    "tic tac toe",
+    "tic tac toe game",
+    "multiplayer tic tac toe",
+    "tic tac toe ai",
+    "tic tac toe lan"
+  ],
   "scripts": {
     "format": "prettier .",
-    "format:fix": "pnpm format --write"
+    "format:fix": "pnpm format --write",
+    "build:server": "cd packages/server && pnpm build && cd ../..",
+    "build:cli": "cd packages/cli && pnpm build && cd ../..",
+    "build:client": "cd packages/client && pnpm build && cd ../..",
+    "build": "pnpm build:server && pnpm build:cli && pnpm build:client",
+    "publish:beta": "pnpm build && npm publish --access public --tag beta",
+    "publish:stable": "pnpm build && npm publish --access public --tag latest"
   },
   "devDependencies": {
-    "tsx": "^4.19.2",
-    "prettier": "3.3.3"
-  }
+    "prettier": "3.3.3",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "execa": "^9.5.2",
+    "vite": "^5.4.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yash49/khelo-tic-tac-toe"
+  },
+  "homepage": "https://github.com/yash49/khelo-tic-tac-toe",
+  "license": "MIT"
 }

@@ -5,7 +5,8 @@
   "main": "src\\server.ts",
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "pnpm clean && tsc -b",
+    "old_build": "pnpm clean && tsc -b",
+    "build": "tsup",
     "start": "node ./dist/server.js",
     "dev:watch": "tsc -b --preserveWatchOutput -w",
     "dev:serve": "node --watch-preserve-output --watch-path ./dist ./dist/server.js",
@@ -13,15 +14,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "uuid": "^11.0.3",
-    "ws": "^8.18.0"
-  },
   "devDependencies": {
     "@types/node": "^22.9.0",
     "@types/ws": "^8.5.13",
     "concurrently": "^9.1.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "uuid": "^11.0.3",
+    "ws": "^8.18.0"
   }
 }

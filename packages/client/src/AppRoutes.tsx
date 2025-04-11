@@ -4,7 +4,7 @@ import { JoinRoom } from './features/JoinRoom';
 import { NotFound } from './features/NotFound';
 import { Onboard } from './features/Onboard';
 import { Layout } from './Layout';
-import { Stack, Link } from '@mui/material';
+import { Stack } from '@mui/material';
 import { Message } from './components';
 import { useAtomValue } from 'jotai';
 import { socketErrorAtom, socketLoadingAtom } from './atoms/connection';
@@ -34,16 +34,7 @@ export const AppRoutes = () => {
       >
         <Message
           title={socketError ? 'Oops! Something went wrong' : 'Loading...'}
-          description={
-            socketError && (
-              <>
-                If the problem persists, please report the issue on{' '}
-                <Link href="https://github.com/yash49/tic-tac-toe/issues">
-                  GitHub
-                </Link>
-              </>
-            )
-          }
+          description={': ('}
         />
       </Stack>
     );
