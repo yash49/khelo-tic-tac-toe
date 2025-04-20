@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "name": "@khelo/tic-tac-toe",
   "type": "module",
   "bin": "./packages/cli/dist/index.js",
@@ -14,7 +14,8 @@
     "packages/client/dist",
     "packages/cli/package.json",
     "packages/server/package.json",
-    "packages/client/package.json"
+    "packages/client/package.json",
+    "README.md"
   ],
   "description": "Play Tic Tac Toe with Friends — or AI!",
   "keywords": [

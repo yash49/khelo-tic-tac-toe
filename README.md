@@ -21,6 +21,7 @@ No setup required. Just play!
 - ✅ **Multiplayer** on the same Wi-Fi / LAN — no internet required
 - 🤖 **Single-player** mode vs. AI (Easy / Medium / Hard)
 - 🏠 **Create or join rooms** using a simple **PIN**
+- 💬 **Chat with other players** during multiplayer games
 - 🔁 **Instant rematch** — with friends or AI
 - 🌓 **Dark & Light modes** — switch anytime
 
@@ -31,6 +32,7 @@ No setup required. Just play!
 - One player runs the game to **host** the server
 - Other players on the same Wi-Fi or LAN will **automatically find the host**
 - Create a room or join using a **PIN**
+- Chat with other players during the game using the in-game chat box
 - Once the game ends, hit **Rematch** to keep playing!
 
 ---
