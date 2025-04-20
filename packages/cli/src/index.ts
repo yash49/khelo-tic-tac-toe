@@ -8,6 +8,7 @@ import { startDiscoveryService } from './startDiscoveryService.js';
 import { WEBSOCKET_PORT } from './constants.js';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
+import treeKill from 'tree-kill';
 
 // -------------------- Setup --------------------
 
@@ -38,7 +39,7 @@ async function cleanupAndExit(code = 0) {
     try {
       await fn();
     } catch (err) {
-      console.error('Cleanup error:', err);
+      // console.error('Cleanup error:', err);
     }
   }
 
@@ -47,6 +48,7 @@ async function cleanupAndExit(code = 0) {
 
 process.on('SIGINT', () => cleanupAndExit(0));
 process.on('SIGTERM', () => cleanupAndExit(0));
+process.on('SIGKILL', () => cleanupAndExit(0));
 
 process.on('uncaughtException', async (err) => {
   console.error('❌ Uncaught exception:', err);
@@ -70,6 +72,8 @@ function startProcess(
 
   const proc = execa(command, args, {
     cwd,
+    stdout: 'pipe',
+    stderr: 'pipe',
   });
 
   proc.stdout?.on('data', (data) => {
@@ -93,7 +97,17 @@ function startProcess(
   });
 
   registerCleanup(() => {
-    proc.kill('SIGINT');
+    return new Promise<void>((resolve) => {
+      if (proc.pid) {
+        console.log(`${prefix} 🧨 Killing process tree (PID: ${proc.pid})...`);
+        treeKill(proc.pid, 'SIGTERM', (err) => {
+          if (err) {
+            console.warn(`${prefix} ⚠️ Failed to kill process tree:`, err);
+          }
+          resolve();
+        });
+      }
+    });
   });
 
   return proc;

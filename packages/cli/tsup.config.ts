@@ -9,7 +9,7 @@ export default defineConfig({
   clean: true,
   outDir: 'dist',
   dts: false, // or true if you want type declarations
-  external: ['execa', 'node:*', 'dgram'], // any node_modules packages
+  external: ['execa', 'node:*', 'dgram', 'tree-kill'], // any node_modules packages
   //   banner: {
   //     js: '#!/usr/bin/env node',
   //   },

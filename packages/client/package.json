@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --open --host",
     "build": "tsc -b && vite build",
-    "start": "npx vite preview --host --open",
+    "start": "npx vite preview --host --open --port 7000",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "pnpm lint --fix",
     "gen:palette": "unicornix && mv ./.unicornix/theme.js ./.unicornix/theme.ts && mv ./.unicornix/theme.refs.js ./.unicornix/theme.refs.ts"

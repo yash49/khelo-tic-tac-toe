@@ -1,5 +1,5 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "name": "@khelo/tic-tac-toe",
   "type": "module",
   "bin": "./packages/cli/dist/index.js",
@@ -54,6 +54,7 @@
   "dependencies": {
     "dgram": "^1.0.1",
     "execa": "^9.5.2",
+    "tree-kill": "1.2.2",
     "vite": "^5.4.10"
   },
   "repository": {
