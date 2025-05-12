@@ -14,6 +14,8 @@ npx @khelo/tic-tac-toe@latest
 
 No setup required. Just play!
 
+![Alt text](./gameplay.png)
+
 ---
 
 ## 🕹️ Features
